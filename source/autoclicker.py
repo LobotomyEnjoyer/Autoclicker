@@ -2,7 +2,7 @@ import pyautogui as gui
 import keyboard as kb
 import time
 
-gui.PAUSE = 0 # убирает паузу между "нажатиями"
+gui.PAUSE = 0 # removes pause between clicks.
 
 INTERVAL_LIMIT = 0.001
 
