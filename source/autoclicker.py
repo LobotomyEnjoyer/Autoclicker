@@ -18,7 +18,6 @@ kb.wait("k")
 while True:
     gui.click()
     count += 1
-    # print(f"click! {count}")
     time.sleep(interval)
 
     if kb.is_pressed("l") or (count >= amount and amount != 0):
