@@ -1,7 +1,0 @@
-ИНСТРУКЦИЯ ПО СОЗДАНИЮ .EXE ФАЙЛА СКРИПТА
-
-Для VSCode:
-1) Зайти в виртуальную среду venv и спуститься в папку "Autoclicker" (Путь в терминале должен быть ...\Autoclicker)
-2) Открыть терминал (Ctrl + Shift + `)
-3) Ввести pyinstaller --onefile .\source\autoclicker.py
-4) .exe файл будет в папке dist по умолчанию.
