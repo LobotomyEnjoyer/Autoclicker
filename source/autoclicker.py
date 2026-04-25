@@ -10,8 +10,7 @@ amount = int(input("Enter amount of clicks (0 = infty): "))
 interval = float(input(f"Enter the interval in seconds between clicks (not lower than {INTERVAL_LIMIT}): "))
 count = 0
 
-if(interval < INTERVAL_LIMIT):
-    interval = INTERVAL_LIMIT
+interval = INTERVAL_LIMIT if (interval < INTERVAL_LIMIT) else interval
 
 pause_event = threading.Event()
 pause_event.set()
