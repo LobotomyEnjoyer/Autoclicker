@@ -13,24 +13,25 @@ count = 0
 if(interval < INTERVAL_LIMIT):
     interval = INTERVAL_LIMIT
 
-is_paused = False
+pause_event = threading.Event()
+pause_event.set()
+
 def pause_handler():
-    global is_paused
+    global pause_event
     while True:
         kb.wait("j")
-        is_paused = not is_paused
-        print("Paused.\n\a" if is_paused else "Resumed.\n\a")
+        pause_event.clear() if pause_event.is_set() else pause_event.set()
+        print("Resumed.\n\a" if pause_event.is_set() else "Paused.\n\a")
         time.sleep(0.1)
 
 def clicker():
-    global is_paused, count, interval
+    global pause_event, count, interval
     while True:
-        if not is_paused:
-            gui.click()
-            count += 1
-            time.sleep(interval)
-        else:
-            time.sleep(0.1)
+        pause_event.wait()
+        gui.click()
+        count += 1
+        time.sleep(interval)
+
 
 
 print("\nPress K to start.\nPress L to stop.\nPress J to pause/resume.\n")
