@@ -37,6 +37,7 @@ def clicker():
 print("\nPress K to start.\nPress L to stop.\nPress J to pause/resume.\n")
 
 kb.wait("k")
+print("The program has started.\n")
 
 threading.Thread(target=pause_handler, daemon=True).start() # Pause handler.
 threading.Thread(target=clicker, daemon=True).start() # Clicker handler.
