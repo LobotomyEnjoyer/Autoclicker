@@ -3,6 +3,11 @@ import keyboard as kb
 import time
 import threading
 
+# Keybinds
+key_start = "k"
+key_stop = "l"
+key_pause = "j"
+
 gui.PAUSE = 0 # removes pause between clicks.
 INTERVAL_LIMIT = 0.001
 
@@ -18,7 +23,7 @@ pause_event.set()
 def pause_handler():
     global pause_event
     while True:
-        kb.wait("j")
+        kb.wait(key_pause)
         pause_event.clear() if pause_event.is_set() else pause_event.set()
         print("Resumed.\n\a" if pause_event.is_set() else "Paused.\n\a")
         time.sleep(0.1)
@@ -32,10 +37,9 @@ def clicker():
         time.sleep(interval)
 
 
+print(f"\nPress {key_start.upper()} to start.\nPress {key_stop.upper()} to stop.\nPress {key_pause.upper()} to pause/resume.\n")
 
-print("\nPress K to start.\nPress L to stop.\nPress J to pause/resume.\n")
-
-kb.wait("k")
+kb.wait(key_start)
 print("The program has started.\n")
 
 threading.Thread(target=pause_handler, daemon=True).start() # Pause handler.
@@ -43,5 +47,5 @@ threading.Thread(target=clicker, daemon=True).start() # Clicker handler.
 
 # Main Thread. Exit handler.
 while True:
-    if kb.is_pressed("l") or (count >= amount and amount != 0):
+    if kb.is_pressed(key_stop) or (count >= amount and amount != 0):
         break
