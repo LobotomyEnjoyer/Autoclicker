@@ -8,7 +8,7 @@ Press K to start.
 Press L to stop.
 Press J to pause/resume.
 
-Key binds can be changes in the source file.
+Key binds can be changed in the source file.
 
 **INSTRUCTIONS:**
 
