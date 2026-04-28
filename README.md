@@ -1,5 +1,5 @@
 # A SIMPLE AUTOCLICKER
-
+---
 Takes input values:
 * Amount of clicks;
 * Cooldown between clicks.
