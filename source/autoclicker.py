@@ -15,7 +15,7 @@ while True:
     try:
         amount = int(input("Enter amount of clicks (0 = infty, default = 100): "))
     except Exception:
-        print("Using default")
+        print("Using default.")
         amount = 100
         break
 
@@ -23,7 +23,7 @@ while True:
     try:
         interval = float(input(f"Enter the interval in seconds between clicks (default = {INTERVAL_LIMIT}): "))
     except Exception:
-        print("Using default minimum.")
+        print("Using default.")
         interval = INTERVAL_LIMIT
         break
 count = 0
