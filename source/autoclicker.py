@@ -21,7 +21,7 @@ while True:
 
 while True:
     try:
-        interval = float(input(f"Enter the interval in seconds between clicks (default = {INTERVAL_LIMIT}): "))
+        interval = float(input(f"Enter the interval in seconds between clicks (0 is allowed, interval cap starts at = {INTERVAL_LIMIT}): "))
         break
     except Exception:
         print("Using default.")
@@ -68,3 +68,4 @@ threading.Thread(target=clicker, daemon=True).start() # Clicker handler.
 while True:
     if kb.is_pressed(key_stop) or (count >= amount and amount != 0):
         break
+    time.sleep(0.01)
