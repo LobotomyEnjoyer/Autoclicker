@@ -11,8 +11,21 @@ key_pause = "j"
 gui.PAUSE = 0 # removes pause between clicks.
 INTERVAL_LIMIT = 0.001
 
-amount = int(input("Enter amount of clicks (0 = infty): "))
-interval = float(input(f"Enter the interval in seconds between clicks (not lower than {INTERVAL_LIMIT}): "))
+while True:
+    try:
+        amount = int(input("Enter amount of clicks (0 = infty, default = 100): "))
+    except Exception:
+        print("Using default")
+        amount = 100
+        break
+
+while True:
+    try:
+        interval = float(input(f"Enter the interval in seconds between clicks (default = {INTERVAL_LIMIT}): "))
+    except Exception:
+        print("Using default minimum.")
+        interval = INTERVAL_LIMIT
+        break
 count = 0
 
 interval = INTERVAL_LIMIT if (interval < INTERVAL_LIMIT) else interval
