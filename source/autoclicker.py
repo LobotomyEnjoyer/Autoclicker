@@ -1,4 +1,4 @@
-import pyautogui as gui
+import mouse
 import keyboard as kb
 import time
 import threading
@@ -8,7 +8,6 @@ key_start = "k"
 key_stop = "l"
 key_pause = "j"
 
-gui.PAUSE = 0 # removes pause between clicks.
 INTERVAL_LIMIT = 0.0001
 
 while True:
@@ -45,12 +44,17 @@ def pause_handler():
 
 def clicker():
     global pause_event, count, interval
-    while True:
-        pause_event.wait()
-        gui.click()
-        count += 1
-        time.sleep(interval)
-
+    if interval <= INTERVAL_LIMIT:
+        while True:
+            pause_event.wait()
+            mouse.click("left")
+            count += 1
+    else:  
+        while True:
+            pause_event.wait()
+            mouse.click("left")
+            count += 1
+            time.sleep(interval) 
 
 print(f"\nPress {key_start.upper()} to start.\nPress {key_stop.upper()} to stop.\nPress {key_pause.upper()} to pause/resume.\n")
 
