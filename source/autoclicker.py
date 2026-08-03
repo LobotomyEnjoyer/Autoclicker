@@ -29,7 +29,7 @@ while True:
         break
 count = 0
 
-interval = INTERVAL_LIMIT if (interval <= INTERVAL_LIMIT) else interval
+interval = 0 if interval < 0 else interval
 
 pause_event = threading.Event()
 pause_event.set()
