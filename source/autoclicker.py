@@ -9,7 +9,7 @@ key_stop = "l"
 key_pause = "j"
 
 gui.PAUSE = 0 # removes pause between clicks.
-INTERVAL_LIMIT = 0.001
+INTERVAL_LIMIT = 0.0001
 
 while True:
     try:
@@ -30,7 +30,7 @@ while True:
         break
 count = 0
 
-interval = INTERVAL_LIMIT if (interval < INTERVAL_LIMIT) else interval
+interval = INTERVAL_LIMIT if (interval <= INTERVAL_LIMIT) else interval
 
 pause_event = threading.Event()
 pause_event.set()
