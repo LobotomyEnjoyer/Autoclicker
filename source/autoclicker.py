@@ -4,24 +4,24 @@ import time
 import threading
 
 # Keybinds
-key_start = "k"
-key_stop = "l"
-key_pause = "j"
+key_start = "alt + shift + k"
+key_stop = "alt + shift + l"
+key_pause = "alt + shift + j"
 
-INTERVAL_LIMIT = 0.0001
+INTERVAL_LIMIT = 0.0001 # should be changed to OS' actual limit? 0.0158, perhaps?
 
 while True:
     try:
-        amount = int(input("Enter amount of clicks (0 = infty, default = 100): "))
+        amount = int(input("Enter amount of clicks (0 = infty, default = 0): "))
         break
     except Exception:
         print("Using default.")
-        amount = 100
+        amount = 0
         break
 
 while True:
     try:
-        interval = float(input(f"Enter the interval in seconds between clicks (0 is allowed, interval cap starts at = {INTERVAL_LIMIT}): "))
+        interval = float(input(f"Enter the interval in seconds between clicks (0 is allowed but not recommended, interval cap starts at = {INTERVAL_LIMIT}): "))
         break
     except Exception:
         print("Using default.")
@@ -31,6 +31,7 @@ count = 0
 
 interval = 0 if interval < 0 else interval
 
+# An event to put a threaded process on pause
 pause_event = threading.Event()
 pause_event.set()
 

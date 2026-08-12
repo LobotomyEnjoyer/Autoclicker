@@ -4,11 +4,12 @@ Takes input values:
 * Amount of clicks;
 * Cooldown between clicks.
 
-Press K to start.
-Press L to stop.
-Press J to pause/resume.
+Default Keybinds:
+* Press ALT + SHIFT + K to start.
+* Press ALT + SHIFT + L to stop.
+* Press ALT + SHIFT + J to pause/resume.
 
-Key binds can be changed in the source file.
+Keybinds can be changed in the source file.
 
 **INSTRUCTIONS:**
 1) Enter the virtual environment (venv) and install all required libraris from **req.txt** by typing `pip install -r req.txt`;
