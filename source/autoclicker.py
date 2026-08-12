@@ -21,7 +21,7 @@ while True:
 
 while True:
     try:
-        interval = float(input(f"Enter the interval in seconds between clicks (0 is allowed but not recommended, interval cap starts at = {INTERVAL_LIMIT}): "))
+        interval = float(input(f"Enter the interval in seconds (float) between clicks (0 is allowed but not recommended, default = {INTERVAL_LIMIT}): "))
         break
     except Exception:
         print("Using default.")

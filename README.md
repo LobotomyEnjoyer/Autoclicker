@@ -15,3 +15,10 @@ Keybinds can be changed in the source file.
 1) Enter the virtual environment (venv) and install all required libraris from **req.txt** by typing `pip install -r req.txt`;
 2) Type `pyinstaller --onefile .\source\autoclicker.py` into the terminal;
 3) The .exe file will be located in the **dist** folder. Enjoy.
+
+**TODO:**
+* Add support to change the interval on the fly
+* Add GUI (maybe?)
+
+# P.S.
+May or may not be updated in the future, this is a personal-use project.
