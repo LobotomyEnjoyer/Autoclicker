@@ -21,7 +21,7 @@ while True:
 
 while True:
     try:
-        interval = float(input(f"Enter the interval in seconds (float) between clicks (0 is allowed but not recommended, default = {INTERVAL_LIMIT}): "))
+        interval = float(input(f"Enter the interval in seconds (float) between clicks (below {INTERVAL_LIMIT} and 0 are not recommended, default = {INTERVAL_LIMIT}): "))
         break
     except Exception:
         print("Using default.")
@@ -45,7 +45,7 @@ def pause_handler():
 
 def clicker():
     global pause_event, count, interval
-    if interval >= INTERVAL_LIMIT:
+    if interval != 0:
         while True:
             pause_event.wait()
             mouse.click("left")
