@@ -8,7 +8,7 @@ key_start = "alt + shift + k"
 key_stop = "alt + shift + l"
 key_pause = "alt + shift + j"
 
-INTERVAL_LIMIT = 0.01 # should be changed to OS' actual limit? 0.0158, perhaps?
+INTERVAL_LIMIT = 0.0001 # should be changed to OS' actual limit? 0.0158, perhaps?
 
 while True:
     try:
