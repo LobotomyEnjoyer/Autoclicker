@@ -8,7 +8,7 @@ key_start = "alt + shift + k"
 key_stop = "alt + shift + l"
 key_pause = "alt + shift + j"
 
-INTERVAL_LIMIT = 0.0001 # should be changed to OS' actual limit? 0.0158, perhaps?
+INTERVAL_LIMIT = 0.01 # should be changed to OS' actual limit? 0.0158, perhaps?
 
 while True:
     try:
@@ -45,17 +45,17 @@ def pause_handler():
 
 def clicker():
     global pause_event, count, interval
-    if interval <= INTERVAL_LIMIT:
+    if interval >= INTERVAL_LIMIT:
         while True:
             pause_event.wait()
             mouse.click("left")
             count += 1
+            time.sleep(interval)
     else:  
         while True:
             pause_event.wait()
             mouse.click("left")
             count += 1
-            time.sleep(interval) 
 
 print(f"\nPress {key_start.upper()} to start.\nPress {key_stop.upper()} to stop.\nPress {key_pause.upper()} to pause/resume.\n")
 
