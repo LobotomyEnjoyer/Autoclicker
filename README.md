@@ -19,6 +19,7 @@ Keybinds can be changed in the source file.
 **TODO:**
 * Add support to change the interval on the fly
 * Add GUI (maybe?)
+* Make a fucking release for one-click people
 
 # P.S.
 May or may not be updated in the future, this is a personal-use project.
